@@ -22,11 +22,11 @@ $(document).keydown(function() {
 
 //user clicks a button and makes sound and animate
 $(".btn").click(function(){
-  var userChosenColour = $(this).attr("id");
-  userClickedPattern.push(userChosenColour);
+  var userChosenColor = $(this).attr("id");
+  userClickedPattern.push(userChosenColor);
 
-  playSound(userChosenColour);
-  animatePress(userChosenColour);
+  playSound(userChosenColor);
+  animatePress(userChosenColor);
   checkAnswer(userClickedPattern.length-1);
 });
 
@@ -68,13 +68,13 @@ function nextSequence() {
 
   var randomNumber = Math.floor(Math.random()*4);
 
-  var randomChosenColour = buttonColors[randomNumber];
+  var randomChosenColor = buttonColors[randomNumber];
 
-  gamePattern.push(randomChosenColour);
+  gamePattern.push(randomChosenColor);
 
-$("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+$("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
 
-playSound(randomChosenColour);
+playSound(randomChosenColor);
 }
 //playsound function
 function playSound(name) {
@@ -82,11 +82,11 @@ function playSound(name) {
   audio.play();
 }
 //animate effect
-function animatePress(currentColour){
-  $("#" + currentColour).addClass("pressed");
+function animatePress(currentColor){
+  $("#" + currentColor).addClass("pressed");
 
   setTimeout (function(){
-    $("#" + currentColour).removeClass("pressed")}
+    $("#" + currentColor).removeClass("pressed")}
     ,100);
   }
 
